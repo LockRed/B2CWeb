@@ -17,7 +17,7 @@ public class UserDAOImpl  extends BaseDAOImpl implements UserDAO {
 		
 		String hql = "from com.cn.shop.model.User u where u.name = "+"'"+name +"'" + " " + "and u.password =" + " " + "'"+password +"'";
 		
-		List<User> list = this.getHibernateTemplate().find( hql);
+		List<User> list = (List<User>) this.getHibernateTemplate().find( hql);
 		
 		if( list != null && list.size() >0 )
 		{

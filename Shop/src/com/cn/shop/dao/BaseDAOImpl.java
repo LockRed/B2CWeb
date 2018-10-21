@@ -116,7 +116,7 @@ public class BaseDAOImpl implements BaseDAO  {
 		
 		
 		
-		list = this.hibernateTemplate.find(hql).subList( begin , end );
+		list = (List<T>) this.hibernateTemplate.find(hql).subList( begin , end );
 		
 		return list;
 		

@@ -245,7 +245,7 @@ public class Test1 {
 	public void test1( )
 	{
 		
-		System.out.print();
+		System.out.println();
 		
 	}
 	
@@ -312,7 +312,7 @@ public class Test1 {
 		
 		String hql = "from com.cn.shop.model.User u where u.name = ? and u.password = ? ";
 		
-		List<User> list = userDAO.getHibernateTemplate().find( hql, new String []{"throne212", "123" });
+		List<User> list = (List<User>) userDAO.getHibernateTemplate().find( hql, new String []{"throne212", "123" });
 		
 		System.out.println( list.size() );
 	}

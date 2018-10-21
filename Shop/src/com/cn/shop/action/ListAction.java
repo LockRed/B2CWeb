@@ -17,6 +17,8 @@ import com.cn.shop.service.UserService;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import net.sf.json.JSONObject;
+
 public class ListAction extends ActionSupport {
 	
 	//商品service IOC
@@ -149,6 +151,11 @@ public class ListAction extends ActionSupport {
 		request.setAttribute("page", pageNo);
 		
 		request.setAttribute("maxpage", maxpage);
+		
+		// 封装成json文件，供页面easyui的datagrid使用
+		JSONObject datas = new JSONObject(); 
+		// 返回查询到记录总数
+		datas.put(1, maxpage);
 		
 		return"list";
 	}
